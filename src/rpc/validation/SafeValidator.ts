@@ -528,7 +528,7 @@ export class SafeValidator
         const callData = encodeDeployData({
             abi: PimlicoEntryPointSimulationsAbi,
             bytecode: PimlicoEntryPointSimulationsBytecode,
-            args: [entryPoint, entryPointSimulationsCallData]
+            args: [entryPoint, [entryPointSimulationsCallData]]
         })
 
         const tracerResult = await debug_traceCall(

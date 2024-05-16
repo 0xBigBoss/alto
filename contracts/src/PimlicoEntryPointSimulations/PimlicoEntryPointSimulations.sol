@@ -10,7 +10,9 @@ contract PimlicoEntryPointSimulations {
     bytes4 private constant selector =
         bytes4(keccak256("delegateAndRevert(address,bytes)"));
 
-    constructor() {}
+    constructor(address payable ep, bytes[] memory data) {
+        simulateEntryPoint(ep, data);
+    }
 
     function simulateEntryPoint(
         address payable ep,
